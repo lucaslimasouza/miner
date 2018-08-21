@@ -12,8 +12,13 @@ RSpec.describe Image do
 
   describe '#name' do
     it "return the name's value" do
-      p subject.name
       expect(subject.name).not_to be_nil
+    end
+  end
+
+  describe '#latitude' do
+    it "return the latitude's value" do
+      expect(subject.latitude).not_to be_nil
     end
   end
 end
