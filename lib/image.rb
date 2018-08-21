@@ -12,4 +12,12 @@ class Image
     [@name, @latitude, @longitude]
   end
 
+  def to_html
+    "<tr>
+      <td>#{@name}</td>
+      <td>#{@latitude}</td>
+      <td>#{@longitude}</td>
+    </tr>"
+  end
+
 end
