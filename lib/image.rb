@@ -8,4 +8,8 @@ class Image
     @longitude = longitude
   end
 
+  def to_csv
+    [@name, @latitude, @longitude]
+  end
+
 end
