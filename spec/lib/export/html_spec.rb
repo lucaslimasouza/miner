@@ -26,8 +26,9 @@ RSpec.describe Export::HTML do
   end
 
   describe '#call' do
-    after(:each) do
-      File.delete("#{path}/#{file}")
+    after(:all) do
+      file = 'spec/data/output/export.html'
+      File.delete(file) if File.exist?(file)
     end
 
     it 'generate a html file' do
@@ -35,6 +36,14 @@ RSpec.describe Export::HTML do
       path_file = "#{path}/#{file}"
 
       expect(File.exist?(path_file)).to be_truthy
+    end
+
+    it 'output an error message' do
+      subject = Export::HTML.new
+
+      expect do
+        subject.call({})
+      end.to output("Error on export HTML file\n").to_stdout
     end
   end
 end

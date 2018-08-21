@@ -1,11 +1,13 @@
 module Export
   class HTML
-    def initialize(path:, file_name:)
+    def initialize(path: '', file_name: '')
       @dir = "#{path}/#{file_name}"
     end
 
     def call(images)
       File.open(@dir, 'w') { |f| f.write to_html(images) }
+    rescue Exception => e
+      puts 'Error on export HTML file'
     end
 
     private
