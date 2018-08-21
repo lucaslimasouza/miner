@@ -21,4 +21,10 @@ RSpec.describe Image do
       expect(subject.latitude).not_to be_nil
     end
   end
+
+  describe '#longitude' do
+    it "return the longitude's value" do
+      expect(subject.longitude).not_to be_nil
+    end
+  end
 end
