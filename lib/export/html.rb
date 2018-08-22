@@ -25,7 +25,7 @@ module Export
           <title>EXIF GPS Extractor</title>
         </head>
         <body>
-          <table>
+          <table width='100%'>
             <thead>
               <tr>
                 <td>Name</td>

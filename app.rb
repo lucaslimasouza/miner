@@ -28,12 +28,20 @@ app = App.new(*ARGV)
 
 loader_attributes = { extractor: Exif::Data }
 loader_attributes[:path] = app.options[:directory] unless app.options[:directory].nil?
+
 loader = Loader.new(loader_attributes)
 images = loader.images
 
 export_attributes = { images: images }
 export_attributes[:format] = app.options[:format] unless app.options[:format].nil?
+
 manager = Export::Manager.new(export_attributes)
-manager.call
+
+begin
+  manager.call
+rescue Exception => e
+  puts e
+  exit
+end
 
 puts 'Success export :) You can see your file in /output'
