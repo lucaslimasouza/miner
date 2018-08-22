@@ -39,10 +39,10 @@ module Export
 
     def footer
       ''"
-              </tbody>
-            </table>
-          </body>
-        </html>
+      </tbody>
+      </table>
+      </body>
+      </html>
       "''
     end
   end

@@ -15,7 +15,7 @@ RSpec.describe Loader do
 
   subject do
     Loader.new(
-      path: 'spec/data',
+      path: 'spec/data/',
       extractor: extractor
     )
   end
