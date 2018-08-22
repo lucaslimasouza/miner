@@ -9,9 +9,6 @@ RSpec.describe Export::HTML do
   let(:image) do
     double(
       'Image',
-      name: 'image.jpg',
-      latitude: Faker::Number.number,
-      longitude: Faker::Number.number,
       to_html: '<tr></tr>'
     )
   end

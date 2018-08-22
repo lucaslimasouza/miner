@@ -9,7 +9,6 @@ RSpec.describe Export::Csv do
   let(:image) do
     double(
       'Image',
-      name: 'image.jpg',
       to_csv: ['image.jpg', Faker::Number.number, Faker::Number.number]
     )
   end
